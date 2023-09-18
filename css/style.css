@@ -1,0 +1,862 @@
+@import url('https://fonts.googleapis.com/css2?family=Sansita:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+
+/*CONFIGURAÇÕES GERAIS*/
+
+html {
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    scroll-behavior: smooth;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    flex-direction: column;
+    margin: 0;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+h1, h2 {
+    font-family: 'Sansita', sans-serif;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #050505;
+    font-family: 'PT Sans', sans-serif;
+    font-weight: 500;
+}
+
+p {
+    font-family: 'PT Sans', sans-serif;
+    font-weight: 600;
+}
+
+li {
+    text-decoration: none;
+    list-style: none;
+    font-family: 'PT Sans', sans-serif;
+    font-weight: bolder;
+}
+
+/*HEADER*/
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    background-color: #a9def942;
+    backdrop-filter: blur(2px);
+    z-index: 1000;
+}
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    position: fixed;
+    margin: 20px;
+}
+
+.header > ul {
+    display: flex;
+    width: 50%;
+    font-family: 'PT Sans', sans-serif;
+    justify-content: space-around;
+    list-style: none;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+}
+
+
+.hamburguer {
+    display: none;
+}
+
+/*MAIN*/
+
+
+#main {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    background-image: url(../imagens/backgroundmain.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right;
+    height: 70vh;
+    width: 80%;
+}
+.carousel-inner {
+    width: 70%;
+}
+
+.swiper {
+    width: 600px;
+    height: 300px;
+  }
+
+.apresentacao  h1 {
+    font-size: 5em;
+    line-height: 60px;
+}
+
+.apresentacao > p {
+    font-size: 1.6em;
+    margin: 20px 0px;
+}
+
+.imgcachorro {
+    display: flex;
+    align-self: flex-end;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 550px;
+    height: 400px;
+    background-image: url(../imagens/isolado-feliz-sorridente-cao-fundo-branco-retrato-4.png);
+}
+
+#apresentacao2 {
+    display: none;
+}
+
+.botaomain1, .botaomain {
+    background-color: #a9def9;
+    width: 350px;
+    height: 50px;
+    color: white;
+    border-radius: 20px;
+    padding: 10px;
+    margin-top: 20px;
+    text-align: center;
+    transition: transform .2s ;
+}
+
+.botaomain1:hover {
+    transform: scale(1.2);
+}
+
+.titulo-container {
+    text-align: center;
+    width: 100%;
+    margin-top: 50px;
+}
+
+.titulo-container > h1 {
+    font-size: 3em;
+}
+
+.img img {
+    width: 250px;
+    height: 250px;
+}
+
+.content-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 70%;
+    height: 50px;
+}
+
+.container {
+    max-width: 1100px;
+    width: 100%;
+    position: relative;
+}
+
+.container i {
+    top: 50%;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    font-size: 1.25rem;
+    position: absolute;
+    text-align: center;
+    line-height: 50px;
+    background-color: #a9def9;
+    border-radius: 50%;
+    color: white;
+    transform: translateY(-50%);
+    transition: transform 0.1s linear;
+}
+
+.container i:active {
+    transform: translateY(-50%) scale(0.85);
+}
+
+.container i:first-child {
+    left: -22px
+}
+
+.container i:last-child {
+    right: -22px;
+
+}
+
+.container .carousel {
+    display: grid;
+    grid-auto-flow:column;
+    grid-auto-columns: calc((100% / 3) - 12px);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 16px;
+    border-radius: 8px;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel.no-transition {
+    scroll-behavior: auto;
+}
+
+.carousel.dragging {
+    scroll-snap-type: none;
+    scroll-behavior: auto;
+}
+
+.carousel.dragging .card {
+    cursor: grab;
+    user-select: none;
+}
+
+.carousel :where(.card, .img){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel .card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    scroll-snap-align: start;
+    height: 342px;
+    list-style: none;
+    background: #fff;
+    cursor: pointer;
+    padding-bottom: 15px;
+    flex-direction: column;
+    border-radius: 8px;
+}
+
+.carousel .card .img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel.card h2 {
+    font-weight: 500;
+    font-size: 1.56rem;
+    margin: 30px 0 5px;
+}
+
+.carousel .card span {
+    color: #a9def9;
+    font-size: 1.32rem;
+}
+
+.veterinario {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 100px;
+    width: 100%;
+}
+
+.veterinario > h1 {
+    font-size: 3em;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 60px
+}
+
+.card-veterinario {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.content-text-veterinario {
+    display: flex;
+    flex-direction: column;
+    margin-right: 90px;
+    width: 50%;
+}
+
+#botaomain2 {
+    display: flex;
+    justify-content: center;
+    height: 1em;
+    align-items: center;
+    padding: 10px 0px;
+    box-shadow: 5px 3px 5px 1px rgba(139, 139, 139, 0.466);
+    color: #050505;
+    font-weight: bolder;
+}
+
+.content-text-veterinario p{
+    font-size: 1.4em;
+    font-weight: lighter;
+}
+
+.content-text-veterinario h2 {
+    font-size: 2em;
+    width: 60%;
+}
+
+.veterinario-img {
+    display: flex;
+    width: 50%;
+    height: 350px;
+    background-image: url(../imagens/veterinario-verificando-a-saude-do-filhote-PhotoRoom.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.acessorios{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.card-acessorios {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    height: 400px;
+}
+
+.content-text-acessorios {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    height: 100%;
+    background-color: #a9def9;
+    background-image: url(../imagens/background-acessorios.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.content-text-acessorios > h2, .content-text-acessorios > p, .content-text-acessorios > .linkac {
+    padding: 0px 20px;
+}
+
+.content-text-acessorios > h2 {
+    font-size: 3em;
+}
+
+.content-text-acessorios > p {
+    font-size: 1.2em;
+    width: 80%;
+}
+
+.acessorios-img {
+    display: flex;
+    background-image: url(../imagens/ainda-vida-de-brinquedos-para-animais-de-estimacao.jpg);
+    width: 50%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.linkac {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    margin-bottom: 20px;
+    font-weight: bolder;
+}
+
+.botaomainac {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    color: #050505;
+    font-weight: bolder;
+    height: 40px;
+    border-radius: 25px;
+    width: 100%;
+    transition: all .2s ease-in-out;
+    box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.178);
+}
+
+.botaomainac:hover {
+    transform: scale(1.05);
+}
+
+.cliente-review {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin-top: 100px;
+}
+
+.cliente-review > h1 {
+    font-size: 3em;
+}
+
+.card-total {
+    display: flex;
+    justify-content: space-between;
+     align-items: center;
+    width: 100%;
+    margin-top: 30px;
+}
+
+
+.card-cliente {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 28%;
+    padding: 20px;
+    background-color: #a9def9;
+    border-radius: 10px;
+}
+
+.content-text-cliente {
+    width: 100%;
+    height: 50%;
+    text-align: center;
+}
+
+.cliente-img {
+    display: flex;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    width: 150px;
+    height: 150px;
+    margin-bottom: 20px;
+}
+
+.img-estrela {
+    display: flex;
+    width: 100%;
+    background-image: url(../imagens/estrelas.png);
+    height: 120px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#img-cliente1 {
+    background-image: url(../imagens/wepik-export-20230918211422tJlK.jpeg);
+}
+
+#img-cliente2 {
+    background-image: url(../imagens/wepik-export-20230918213242cNcW.jpeg);
+}
+
+#img-cliente3 {
+    background-image: url(../imagens/mulher-jovem-abracando-seu-pitbull.jpg);
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    align-items: center;
+    width: 80%;
+    height: 30vh;
+    background-color: #a9def9;
+    background-image: url(../imagens/background-acessorios.jpg);
+    justify-content: space-between;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.img-cachorro-final {
+    display: flex;
+    background-image: url(../imagens/lindo-retrato-de-animal-de-estimacao-isolado-PhotoRoom.png);
+    width: 100%;
+    height: 300px;
+    justify-content: space-between;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
+    bottom: -100px;
+}
+
+.img-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    position: relative;
+}
+
+.logos {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-right: 40px;
+    padding-left: 0px;
+}
+
+
+.logos > i {
+    display: flex;
+    font-size: 1.5em;
+    align-items: center;
+    padding-top: 20px;
+    justify-content: end;
+}
+.logos > i > p {
+    font-size: .8em;
+    padding-left: 5px;
+    margin: 0;
+
+}
+
+.links-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.link-footer {
+    padding-top: 20px;
+}
+@media screen and (max-width: 930px) {
+    
+    .container {
+        width: 80%;
+    }
+    .container .carousel {
+        grid-auto-columns: calc((100% / 2) - 9px);
+    }
+
+    .content-text-acessorios > h2 {
+        font-size: 2.2em;
+    }
+    
+    .content-text-acessorios > p {
+        font-size: 1.1em;
+        width: 80%;
+    }
+
+    footer {
+        width: 100%;
+    }
+
+    .img-card {
+        width: 100%;
+    }
+
+    .img-cachorro-final {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 650px ) {
+    .container .carousel {
+        grid-auto-columns: 100%;
+    }
+
+    .content-text-acessorios > p {
+        font-size: 1.1em;
+        width: 90%;
+    }
+
+    .card-acessorios {
+        display: flex;
+        align-items: center;
+        flex-direction: column-reverse;
+        justify-content: space-around;
+        width: 100%;
+        height: 90vh;
+    }
+
+    .content-text-acessorios {
+        width: 100%;
+        align-items: center;
+        border-top-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        height: 60%;
+        text-align: center;
+    }
+
+    .acessorios-img {
+        width: 100%;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+}
+
+@media only screen and (max-width: 1200px) and (min-width: 732px) {
+    #main {
+        width: 100%;
+    }
+
+    .card-total {
+        flex-direction: column;
+    }
+
+    .card-cliente {
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    #botaomain2 {
+        width: 70%;
+    }
+
+    .container {
+        width: 80%;
+    }
+
+    .apresentacao {
+        width: 100%;
+        margin: 0px 90px;
+    }
+
+    .imgcachorro {
+        padding: 0px 20px;
+    }
+
+    .apresentacao > h1 {
+        font-size: 5em;
+    }
+}
+
+.content-text-veterinario {
+    margin: 0;
+}
+
+@media only screen and (max-width: 732px) and (min-width: 0px) {
+    
+    #main {
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 550px;
+    }
+
+    header ul {
+        display: none;
+    }
+    .imgcachorro {
+        background-position: center;
+        width: 100%;
+        height: 450px;
+        padding: 0;
+    }
+
+    .apresentacao {
+        display: none;
+    }
+
+    #apresentacao2 > h1 {
+        width: 100%;
+        font-size: 3em;
+        text-align: center;
+    }
+    
+    #apresentacao2 > p {
+        font-size: 1.4em;
+        width: 80%;
+        text-align: center;
+        margin: 10px 0px;
+    }
+    
+    #apresentacao2 {
+        width: 100%;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .botaomain {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        height: 30px;
+        width: 60%;
+        box-shadow: 3px 3px 3px rgba(182, 182, 182, 0.363);
+        font-size: 1.3em;
+        margin: 10px 0px;
+    }
+
+    .veterinario {
+        margin-top: 20px;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .veterinario > h1 {
+        width: 100%;
+        font-size: 2.5em;
+    }
+
+    .veterinario-img {
+        height: 300px;
+        width: 100%;
+    }
+
+    .card-veterinario {
+        width: 100%;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .content-text-veterinario {
+        margin: 0;
+        align-items: center;
+        width: 90%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .content-text-veterinario h2 {
+        font-size: 1.5em;
+        width: 100%;
+    }
+
+    .content-text-veterinario p {
+        font-size: 1em;
+        width: 100%;
+    }
+
+    #botaomain2 {
+        width: 90%;
+    }
+
+    .veterinario h1 {
+        padding-bottom: 10px;
+    }
+
+    .linkac {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .botaomainac {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        color: #050505;
+        font-weight: bold;
+        height: 50px;
+        border-radius: 25px;
+        width: 100%;
+    }
+
+    .card-total {
+        flex-direction: column;
+    }
+
+    .card-cliente {
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    .navegacao {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        margin: 0;
+        background-color: #252525;
+        width: 100%;
+        max-width: 150px;
+        padding: 100px 20px;
+        flex-direction: column;
+        transition: all .2s ease-in-out;
+    }
+    .hamburguer {
+        display: flex;
+        cursor: pointer;
+        transition: all .2s ease-in-out;
+        z-index: 9;
+    }
+    
+    .navegacao.active {
+        right: 0;
+        justify-content: flex-start;
+    }
+
+    .navegacao.active > li > a {
+        color: white;
+        
+    }
+    
+    .hamburguer:hover {
+        color: #050505;
+    }
+    
+    .material-symbols-outlined {
+        font-variation-settings:
+        'FILL' 2,
+        'wght' 600,
+        'GRAD' 0,
+        'opsz' 100
+    }
+    #li1, #li2, #li3, #li4, #li5 {
+        font-size: 1.5em;
+        padding: 10px 0px;
+    }
+    
+}
