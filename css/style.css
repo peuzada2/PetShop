@@ -75,7 +75,7 @@ header {
     display: flex;
     width: 70%;
     font-family: 'PT Sans', sans-serif;
-    justify-content: space-around;
+    justify-content: space-between;
     list-style: none;
     padding: none;
 }
