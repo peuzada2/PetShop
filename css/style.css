@@ -181,7 +181,13 @@ header {
 .container {
     max-width: 1100px;
     width: 100%;
+    z-index: 1000;
+    transition: 0.4s;
     position: relative;
+}
+
+.container.is-active {
+    z-index: 0;
 }
 
 .container i {
@@ -198,6 +204,7 @@ header {
     color: white;
     transform: translateY(-50%);
     transition: transform 0.1s linear;
+
 }
 
 .container i:active {
@@ -842,13 +849,13 @@ footer {
         justify-content: flex-start;
         height: 100vh;
         top: 0;
-        position: fixed;
+        position: absolute;
         background-color: #363636;
         margin: 0;
         max-width: 300px;
         left: -300px;
         transition: 0.2s linear;
-    }
+       }
 
     #header2.is-active {
         left: 0;
@@ -897,8 +904,7 @@ footer {
 
     .menu {
         display: block;
-        position: fixed;
-        z-index: 99;
+        position: absolute;
         top: 2.5rem;
         right: 2rem;
         width: 60px;

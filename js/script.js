@@ -83,7 +83,8 @@ const sidebar = document.getElementById('header2')
 
 menutoggle.addEventListener('click', () => {
 menutoggle.classList.toggle('is-active');
-sidebar.classList.toggle('is-active')
+sidebar.classList.toggle('is-active');
+container.classList.toggle('is-active');
 })
 
 
