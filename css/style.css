@@ -223,7 +223,7 @@ header {
 .container .carousel {
     display: grid;
     grid-auto-flow:column;
-    grid-auto-columns: calc((100% / 3) - 12px);
+    grid-auto-columns: calc((100% / 5) - 12px);
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     gap: 16px;
@@ -913,6 +913,10 @@ footer {
 
     .hamburguer {
         display: block;
+    }
+
+    .menu:hover .card-cliente {
+        border: 1px solid red;
     }
     
     .hamburguer{
