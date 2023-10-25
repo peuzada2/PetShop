@@ -5,17 +5,7 @@
   const arrowBtns = document.querySelectorAll(".container i");
   const carouselChildrens = [...carousel.children];
 
-  let isDragging = false, isAutoPlay = false, startX, startScrollLeft, timeoutId;
 
-  let cardPerView = Math.round(carousel.offsetWidth / firstCardWidth);
-
-  carouselChildrens.slice(-cardPerView).reverse().forEach(card => {
-    carousel.insertAdjacentHTML("afterbegin", card.outerHTML);
-  });
-
- carouselChildrens.slice(0, cardPerView).forEach(card => {
-  carousel.insertAdjacentHTML("beforeend", card.outerHTML);
- });
 
  carousel.classList.add("no-transition");
  carousel.scrollLeft = carousel.offsetWidth
